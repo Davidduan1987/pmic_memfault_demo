@@ -1,0 +1,24 @@
+# Copyright (c) 2023 Nordic Semiconductor ASA
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+sample:
+  name: mem_lbs (BLE LBS + Memfault-over-BLE + nPM1300 fuel gauge)
+  description: >
+    nRF54L15 DK + nPM1300 EK sample combining the BLE LED-Button Service (advertised as
+    "mem_lbs"), the Memfault Diagnostic Service (Memfault data uploaded over BLE), and the
+    nPM1300 fuel gauge (state of charge, state of health, charging status).
+common:
+  integration_platforms:
+    - nrf54l15dk/nrf54l15/cpuapp
+  platform_allow:
+    - nrf54l15dk/nrf54l15/cpuapp
+  tags:
+    - pmic
+    - ci_samples_pmic
+    - bluetooth
+    - sysbuild
+tests:
+  sample.mem_lbs_memfault_compile:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - EXTRA_DTC_OVERLAY_FILE=npm1300.overlay

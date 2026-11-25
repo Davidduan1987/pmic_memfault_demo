@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="648" viewBox="0 0 680 648" role="img">
+<title>nPM1300 EK 与 nRF54L15 DK 接线图</title>
+<desc>nPM1300 评估板与 nRF54L15 DK 之间 SDA、SCL、GPIO3、VDDIO、GND 五根连线的对应关系,以及 EK 侧跳线设置和引脚共用注意事项。</desc>
+<style>
+  text { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif; fill: #1f1e1d; }
+  .t  { font-size: 14px; }
+  .th { font-size: 14px; font-weight: 500; }
+  .ts { font-size: 12px; fill: #444441; }
+  .box { fill: #f6f5f0; stroke: #888780; stroke-width: 0.5; }
+  .warn { fill: #faeeda; stroke: #854f0b; stroke-width: 0.5; }
+  .warn-t { fill: #412402; }
+  .warn-s { fill: #633806; }
+</style>
+<rect x="0" y="0" width="680" height="648" fill="#ffffff"/>
+
+<rect class="box" x="40" y="50" width="260" height="242" rx="6" stroke-dasharray="6 4"/>
+<rect class="box" x="380" y="50" width="260" height="242" rx="6" stroke-dasharray="6 4"/>
+<text class="th" x="170" y="78" text-anchor="middle">nRF54L15 DK</text>
+<text class="th" x="510" y="78" text-anchor="middle">nPM1300 EK</text>
+
+<line x1="300" y1="118" x2="380" y2="118" stroke="#378ADD" stroke-width="2"/>
+<line x1="300" y1="154" x2="380" y2="154" stroke="#1D9E75" stroke-width="2"/>
+<line x1="300" y1="190" x2="380" y2="190" stroke="#BA7517" stroke-width="2"/>
+<line x1="300" y1="226" x2="380" y2="226" stroke="#D85A30" stroke-width="2"/>
+<line x1="300" y1="262" x2="380" y2="262" stroke="#5F5E5A" stroke-width="2"/>
+
+<circle cx="300" cy="118" r="4" fill="#378ADD"/>
+<circle cx="380" cy="118" r="4" fill="#378ADD"/>
+<circle cx="300" cy="154" r="4" fill="#1D9E75"/>
+<circle cx="380" cy="154" r="4" fill="#1D9E75"/>
+<circle cx="300" cy="190" r="4" fill="#BA7517"/>
+<circle cx="380" cy="190" r="4" fill="#BA7517"/>
+<circle cx="300" cy="226" r="4" fill="#D85A30"/>
+<circle cx="380" cy="226" r="4" fill="#D85A30"/>
+<circle cx="300" cy="262" r="4" fill="#5F5E5A"/>
+<circle cx="380" cy="262" r="4" fill="#5F5E5A"/>
+
+<text class="t" x="290" y="122" text-anchor="end">P1.11 (SDA)</text>
+<text class="t" x="290" y="158" text-anchor="end">P1.12 (SCL)</text>
+<text class="t" x="290" y="194" text-anchor="end">P0.04 (GPIO3)</text>
+<text class="t" x="290" y="230" text-anchor="end">VDDIO</text>
+<text class="t" x="290" y="266" text-anchor="end">GND</text>
+
+<text class="t" x="390" y="122">SDA</text>
+<text class="t" x="390" y="158">SCL</text>
+<text class="t" x="390" y="194">GPIO3</text>
+<text class="t" x="390" y="230">VDDIO</text>
+<text class="t" x="390" y="266">GND</text>
+
+<rect class="box" x="40" y="322" width="600" height="180" rx="6"/>
+<text class="th" x="60" y="348">EK 端跳线 / 供电设置</text>
+<text class="ts" x="60" y="370">P1 跳线:短接 VBATIN 与 VBAT</text>
+<text class="ts" x="60" y="392">P17 跳线:短接全部 LED</text>
+<text class="ts" x="60" y="414">P13 跳线:短接 RSET1 与 VSET1</text>
+<text class="ts" x="60" y="436">P14 跳线:短接 RSET2 与 VSET2</text>
+<text class="ts" x="60" y="458">P3 跳线:无热敏电阻时短接 NTC 与 10kΩ</text>
+<text class="ts" x="60" y="480">电池接 J1/J2;USB 供电接 J3(供电 EK 及 I/O 参考电压)</text>
+
+<rect class="warn" x="40" y="522" width="600" height="86" rx="6"/>
+<text class="th warn-t" x="60" y="548">注意:引脚共用</text>
+<text class="ts warn-s" x="60" y="570">GPIO3(EK)对应 DK 的 P0.04</text>
+<text class="ts warn-s" x="60" y="592">该引脚同时是 DK 的 BUTTON 3,接好 PMIC 后请勿按 Button 3</text>
+</svg>

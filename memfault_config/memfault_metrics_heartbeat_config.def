@@ -1,0 +1,17 @@
+/* Application-specific metrics can be defined here.
+ * Please refer to https://docs.memfault.com/docs/embedded/metrics-api for more details.
+ *
+ * battery_soc_pct, battery_soc_pct_drop, battery_discharge_duration_ms, battery_voltage
+ * and battery_soh_pct are Memfault's official Core Battery Metrics, defined and populated
+ * automatically by CONFIG_MEMFAULT_NRF_PLATFORM_BATTERY_NPM13XX (see prj.conf) — do not
+ * redefine them here, that would conflict with the SDK's own definitions.
+ */
+
+/* Whether the battery is currently being charged (0 = no, 1 = yes). */
+MEMFAULT_METRICS_KEY_DEFINE(battery_charging, kMemfaultMetricType_Unsigned)
+
+/* BLE connection state (0 = advertising, 1 = connected). */
+MEMFAULT_METRICS_KEY_DEFINE(ble_conn_state, kMemfaultMetricType_Unsigned)
+
+/* DK LED state, bit0..bit3 map to LED1..LED4 (1 = on). */
+MEMFAULT_METRICS_KEY_DEFINE(led_state_bitmask, kMemfaultMetricType_Unsigned)
